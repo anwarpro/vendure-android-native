@@ -1,9 +1,10 @@
+val composeVersion = "1.0.1"
+val apolloGraphqlVersion = "3.0.0"
 plugins {
     id("com.android.application")
     id("kotlin-android")
+    id("com.apollographql.apollo3").version("3.0.0")
 }
-
-val composeVersion = "1.0.1"
 
 android {
     compileSdk = 32
@@ -51,6 +52,10 @@ android {
     }
 }
 
+apollo {
+    packageName.set("com.helloanwar.vendure")
+}
+
 dependencies {
     implementation("androidx.core:core-ktx:1.7.0")
     implementation("androidx.appcompat:appcompat:1.4.0")
@@ -60,6 +65,10 @@ dependencies {
     implementation("androidx.compose.ui:ui-tooling-preview:$composeVersion")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.4.0")
     implementation("androidx.activity:activity-compose:1.4.0")
+
+    implementation("com.apollographql.apollo3:apollo-runtime:$apolloGraphqlVersion")
+
+    implementation("com.github.ajalt:timberkt:1.5.1")
 
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.3")

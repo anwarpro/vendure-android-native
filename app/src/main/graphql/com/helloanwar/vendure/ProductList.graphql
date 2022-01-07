@@ -1,0 +1,9 @@
+query ProductList {
+    products {
+        items {
+            name
+            description
+        }
+        totalItems
+    }
+}

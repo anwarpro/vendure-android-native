@@ -8,6 +8,7 @@ import androidx.compose.material.Surface
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.lifecycle.lifecycleScope
 import com.helloanwar.vendure.ui.theme.VendureTheme
 
 class MainActivity : ComponentActivity() {
@@ -20,6 +21,10 @@ class MainActivity : ComponentActivity() {
                     Greeting("Android")
                 }
             }
+        }
+
+        lifecycleScope.launchWhenResumed {
+            val response = apolloClient.query(ProductListQuery()).execute()
         }
     }
 }
