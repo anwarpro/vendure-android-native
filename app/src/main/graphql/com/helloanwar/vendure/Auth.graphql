@@ -1,0 +1,68 @@
+mutation GoogleAuthenticate($token: String!) {
+    authenticate(input: {
+        google: { token: $token }
+    }) {
+        ...on CurrentUser {
+            id
+            identifier
+        }
+    }
+}
+
+mutation NativeAuthenticate($userName: String!, $password: String!){
+    login(username: $userName, password: $password){
+        ... on CurrentUser {
+            id
+            identifier
+        }
+
+        ... on ErrorResult {
+            errorCode
+            message
+        }
+
+        ... on InvalidCredentialsError {
+            authenticationError
+            errorCode
+            message
+        }
+
+        ... on NativeAuthStrategyError {
+            errorCode
+            message
+        }
+
+        ... on NotVerifiedError {
+            errorCode
+            message
+        }
+    }
+}
+
+mutation RegisterNative($firstName: String!, $email: String!, $password: String!){
+    registerCustomerAccount(input: {firstName: $firstName, emailAddress: $email, password: $password}){
+        ... on Success {
+            success
+        }
+
+        ... on NativeAuthStrategyError {
+            errorCode
+            message
+        }
+
+        ... on ErrorResult {
+            errorCode
+            message
+        }
+        ... on MissingPasswordError {
+            errorCode
+            message
+        }
+    }
+}
+
+mutation Logout {
+    logout {
+        success
+    }
+}

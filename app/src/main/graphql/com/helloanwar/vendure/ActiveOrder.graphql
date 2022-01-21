@@ -1,0 +1,18 @@
+query ActiveOrder {
+    activeOrder {
+        id
+        code
+        active
+        lines {
+            productVariant {
+                id
+                productId
+            }
+            quantity
+        }
+        state
+        totalQuantity
+        total
+        currencyCode
+    }
+}

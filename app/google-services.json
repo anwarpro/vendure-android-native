@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "19401069343",
+    "project_id": "strapi-ecommerce-babe9",
+    "storage_bucket": "strapi-ecommerce-babe9.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:19401069343:android:3cce354abee7ddf422d62a",
+        "android_client_info": {
+          "package_name": "com.helloanwar.vendure"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "19401069343-0k4bt1b9nobs55jkgiksgsifa12dl3kh.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.helloanwar.vendure",
+            "certificate_hash": "46b7de732153034c3d9f7feef92a8a365b4a6a38"
+          }
+        },
+        {
+          "client_id": "19401069343-hh2nuc8ucsudq7rte5n5b8ulq559d7ps.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfRyv76ww5WWbr3JPcv4WJzb3zABhgpg4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "19401069343-hh2nuc8ucsudq7rte5n5b8ulq559d7ps.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

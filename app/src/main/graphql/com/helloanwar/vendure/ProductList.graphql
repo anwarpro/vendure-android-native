@@ -1,9 +1,26 @@
-query ProductList {
-    products {
+query ProductList($take: Int, $skip: Int) {
+    products(options: {take: $take, skip: $skip}) {
+        totalItems
         items {
+            id
+            slug
             name
             description
+            variants {
+                id
+                name
+                price
+                options {
+                    id
+                    name
+                }
+            }
+            featuredAsset {
+                source
+            }
+            assets {
+                source
+            }
         }
-        totalItems
     }
 }

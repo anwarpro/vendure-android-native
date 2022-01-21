@@ -1,0 +1,13 @@
+query CollectionList($take: Int, $skip: Int) {
+    collections(options:{take: $take skip:$skip}){
+        totalItems
+        items {
+            id
+            slug
+            name
+            featuredAsset{
+                source
+            }
+        }
+    }
+}
